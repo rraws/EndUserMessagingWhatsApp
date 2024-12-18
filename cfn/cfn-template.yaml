@@ -1,0 +1,56 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'Template to create an example Lambda function to handle the WhatsApp
+  messages from AWS End User Messaging Social.
+
+  '
+Globals:
+  Function:
+    Timeout: 15
+Parameters:
+  SNSTopicArn:
+    Type: String
+    Description: ARN of the SNS Topic that will trigger the Lambda function
+  PhoneNumberID:
+    Type: String
+    Description: WhatsApp Phone Number ID to use for sending messages
+Resources:
+  WhatsAppMessageHandlerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: https://github.com/rr-on-gh/EndUserMessagingWhatsApp/releases/download/v0.0.2/code.zip
+      Handler: app.lambdaHandler
+      Runtime: nodejs20.x
+      Environment:
+        Variables:
+          PHONE_NUMBER_ID:
+            Ref: PhoneNumberID
+      Architectures:
+      - x86_64
+      Policies:
+      - Statement:
+        - Sid: WhatsAppMessagingPolicy
+          Effect: Allow
+          Action:
+          - social-messaging:SendWhatsAppMessage
+          Resource:
+            Fn::Sub:
+            - arn:${AWS::Partition}:social-messaging:${AWS::Region}:${AWS::AccountId}:phone-number-id/${id}
+            - id:
+                Fn::Select:
+                - 3
+                - Fn::Split:
+                  - '-'
+                  - Ref: PhoneNumberID
+      Events:
+        SNSEvent:
+          Type: SNS
+          Properties:
+            Topic:
+              Ref: SNSTopicArn
+    Metadata:
+      SamResourceId: WhatsAppMessageHandlerFunction
+Outputs:
+  WhatsAppMessageHandlerFunction:
+    Description: ARN of the Lambda Function that handles the customer WhatsApp messages
+    Value: WhatsAppMessageHandlerFunction

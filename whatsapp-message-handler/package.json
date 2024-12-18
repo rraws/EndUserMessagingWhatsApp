@@ -1,0 +1,13 @@
+{
+  "name": "whatsapp-message-handler",
+  "version": "1.0.0",
+  "description": "Lambda handler function to process customer's WhatsApp messages delivered via SNS through AWS End User Messaging",
+  "main": "app.js",
+  "author": "Rakshith Rao (rakrao@amazon.de)",
+  "license": "MIT",
+  "dependencies": {
+    "axios": ">=1.6.0",
+    "@aws-sdk/client-socialmessaging": "^3.0.0",
+    "@types/aws-lambda": "^8.10.0"
+  }
+}

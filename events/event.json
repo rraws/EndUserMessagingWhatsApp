@@ -1,0 +1,22 @@
+{
+  "Records": [
+    {
+      "EventSource": "aws:sns",
+      "EventVersion": "1.0",
+      "EventSubscriptionArn": "arn:aws:sns:us-east-1:123456789123:sometopic:a4f21718-8d2a-435a-a334-e3ed792eb90a",
+      "Sns": {
+        "Type": "Notification",
+        "MessageId": "9d44e66b-164c-5a02-a8d0-b9b8a78f6ea3",
+        "TopicArn": "arn:aws:sns:us-east-1:123456789123:sometopic",
+        "Subject": null,
+        "Message": "{\"context\":{\"MetaWabaIds\":[{\"wabaId\":\"12345678912\",\"arn\":\"arn:aws:social-messaging:us-east-1:123456789123:waba/12312fsdf34234\"}],\"MetaPhoneNumberIds\":[{\"metaPhoneNumberId\":\"12345678912\",\"arn\":\"arn:aws:social-messaging:us-east-1:123456789123:phone-number-id/beac969f93774a012345678912f76a276\"}]},\"whatsAppWebhookEntry\":\"{\\\"id\\\":\\\"12345678912\\\",\\\"changes\\\":[{\\\"value\\\":{\\\"messaging_product\\\":\\\"whatsapp\\\",\\\"metadata\\\":{\\\"display_phone_number\\\":\\\"12345678912\\\",\\\"phone_number_id\\\":\\\"12345678912\\\"},\\\"contacts\\\":[{\\\"profile\\\":{\\\"name\\\":\\\"test\\\"},\\\"wa_id\\\":\\\"12345678912\\\"}],\\\"messages\\\":[{\\\"from\\\":\\\"12345678912\\\",\\\"id\\\":\\\"wamid.HBgNNDkxNjA5MTcwODY2MxUCABIYFDNBMDQ2RDAxLKJHGFRRTYUIOLKMNB==\\\",\\\"timestamp\\\":\\\"1733930882\\\",\\\"text\\\":{\\\"body\\\":\\\"Test Message\\\"},\\\"type\\\":\\\"text\\\"}]},\\\"field\\\":\\\"messages\\\"}]}\",\"aws_account_id\":\"123456789123\",\"message_timestamp\":\"2024-12-11T15:28:03.471140546Z\"}",
+        "Timestamp": "2024-12-11T15:28:03.509Z",
+        "SignatureVersion": "1",
+        "Signature": "ECLasd314asyunefqLBLVKqxZgu8uXIpal8mmKwNpzkSKa09adnD0MvnjyVdk8N62bpotAnVlVy9BBpQeBxohiXnguC+QjPnDYYu7CjX+5/aVJVqgP9bjaR6N30ohb0g8yh2E06E7JmPQPtOHHzoard07JlNPamevxBe51BgS6KX9zZ3Qme4anNxFQrcLRlUPQ0brAfaqDAbeUKrcIyEkbtbP6BC9mBdnJU15irpCWD1Di3/8208lzZpm/HtqXVBQURUCdSaNV1mFUCgX2PypuV59SPIQrTXZyOs15v3e1RYI4pn9j9x60IkvQN7W9FziTr5hM1oKnFJBEl0g2aj1w==",
+        "SigningCertUrl": "https://sns.us-east-1.amazonaws.com/SimpleNotificationService-9c6465fa7f48f5cacd23014631ec1136.pem",
+        "UnsubscribeUrl": "https://sns.us-east-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-east-1:123456789123:sometopic:a4f21718-8d2a-435a-a334-e3ed792eb90a",
+        "MessageAttributes": {}
+      }
+    }
+  ]
+}
