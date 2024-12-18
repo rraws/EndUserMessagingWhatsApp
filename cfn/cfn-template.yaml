@@ -18,7 +18,7 @@ Resources:
   WhatsAppMessageHandlerFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: https://github.com/rr-on-gh/EndUserMessagingWhatsApp/releases/download/v0.0.2/code.zip
+      CodeUri: https://github.com/rraws/EndUserMessagingWhatsApp/releases/download/v0.0.1/code.zip
       Handler: app.lambdaHandler
       Runtime: nodejs20.x
       Environment:
